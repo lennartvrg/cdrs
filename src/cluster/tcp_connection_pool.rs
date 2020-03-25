@@ -1,9 +1,8 @@
 use async_trait::async_trait;
 use bb8::{Builder, ManageConnection};
 use std::io;
-use std::net::SocketAddr;
-use tokio::io::AsyncWriteExt;
-use tokio::sync::Mutex;
+use std::io::Write;
+use std::net::ToSocketAddrs;
 
 use crate::authenticators::Authenticator;
 use crate::cluster::ConnectionPool;
@@ -38,8 +37,9 @@ pub async fn new_tcp_pool<'a, A: Authenticator + Send + Sync + 'static>(
 
     let addr = node_config
         .addr
-        .parse::<SocketAddr>()
-        .map_err(|err| error::Error::from(err.to_string()))?;
+        .to_socket_addrs()?
+        .next()
+        .ok_or_else(|| error::Error::from("Cannot parse address"))?;
 
     Ok(TcpConnectionPool::new(pool, addr))
 }
