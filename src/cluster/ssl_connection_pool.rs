@@ -2,7 +2,8 @@ use openssl::ssl::SslConnector;
 use r2d2::{Builder, ManageConnection, Pool};
 use std::cell::RefCell;
 use std::error::Error;
-use std::io::Write;
+use tokio::io::AsyncWriteExt;
+use tokio::sync::Mutex;
 use std::net::{SocketAddr, ToSocketAddrs};
 
 use crate::authenticators::Authenticator;
