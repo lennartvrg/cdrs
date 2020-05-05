@@ -1,7 +1,8 @@
 use async_trait::async_trait;
 use bb8::{Builder, ManageConnection};
 use std::io;
-use std::io::Write;
+use tokio::io::AsyncWriteExt;
+use tokio::sync::Mutex;
 use std::net::ToSocketAddrs;
 
 use crate::authenticators::Authenticator;
