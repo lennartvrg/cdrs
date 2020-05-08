@@ -25,25 +25,25 @@ e2e-tests = []
 unstable-dynamic-cluster = []
 
 [dependencies]
-async-trait = "0.1.24"
+async-trait = "0.1.30"
 byteorder = "1"
 fnv = "1.0"
-log = "0.4.1"
+log = "0.4.8"
 lz4-compress = "=0.1.0"
 tokio-tls = { version = "0.3", optional = true }
 native-tls = { version = "0.2", optional = true }
 bb8 = "0.4"
-rand = "0.4.1"
-snap = "0.2.3"
-time = "0.1.38"
+rand = "0.7.3"
+snap = "1.0.0"
+time = "0.1.43"
 tokio = { version = "0.2", features = ["tcp", "io-util", "dns", "sync", "macros"] }
 uuid = "0.8.1"
 
 [dev-dependencies]
-env_logger = "0.4.3"
-maplit = "1.0.0"
-regex = "0.2.5"
-cdrs_helpers_derive = "0.1.0"
+env_logger = "0.7.1"
+maplit = "1.0.2"
+regex = "1.3.7"
+cdrs_helpers_derive = "0.3.3"
 
 [[example]]
 name = "dynamic_cluster"
