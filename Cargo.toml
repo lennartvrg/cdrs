@@ -25,9 +25,9 @@ e2e-tests = []
 unstable-dynamic-cluster = []
 
 [dependencies]
-async-trait = "0.1.30"
+async-trait = "0.1.31"
 byteorder = "1"
-fnv = "1.0"
+fnv = "1.0.7"
 log = "0.4.8"
 lz4-compress = "=0.1.0"
 tokio-tls = { version = "0.3", optional = true }
@@ -36,7 +36,7 @@ bb8 = "0.4"
 rand = "0.7.3"
 snap = "1.0.0"
 time = "0.1.43"
-tokio = { version = "0.2", features = ["tcp", "io-util", "dns", "sync", "macros"] }
+tokio = { version = "0.2.21", features = ["tcp", "io-util", "dns", "sync", "macros"] }
 uuid = "0.8.1"
 
 [dev-dependencies]
