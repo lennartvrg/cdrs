@@ -28,13 +28,13 @@ unstable-dynamic-cluster = []
 async-trait = "0.1.36"
 byteorder = "1"
 fnv = "1.0.7"
-log = "0.4.8"
+log = "0.4.11"
 lz4-compress = "=0.1.0"
 tokio-tls = { version = "0.3", optional = true }
 native-tls = { version = "0.2", optional = true }
 bb8 = "0.4"
 rand = "0.7.3"
-snap = "1.0.0"
+snap = "1.0.1"
 time = "0.1.43"
 tokio = { version = "0.2.21", features = ["tcp", "io-util", "dns", "sync", "macros"] }
 uuid = "0.8.1"
